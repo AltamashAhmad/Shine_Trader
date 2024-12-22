@@ -1,13 +1,22 @@
-import { Container, Typography } from '@mui/material';
+import HeroSection from '../components/home/HeroSection';
+import SearchBar from '../components/home/SearchBar';
+import CategorySection from '../components/home/CategorySection';
+import { Container } from '@mui/material';
 
 const Home = () => {
+  const handleSearch = (searchTerm) => {
+    console.log('Searching for:', searchTerm);
+    // Will implement search functionality later
+  };
+
   return (
-    <Container>
-      <Typography variant="h3" component="h1" sx={{ my: 4 }}>
-        Welcome to ShineTrader's
-      </Typography>
-      {/* More content will be added later */}
-    </Container>
+    <>
+      <HeroSection />
+      <Container>
+        <SearchBar onSearch={handleSearch} />
+        <CategorySection />
+      </Container>
+    </>
   );
 };
 
