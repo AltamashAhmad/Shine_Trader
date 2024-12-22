@@ -59,4 +59,4 @@ const CategorySection = () => {
   );
 };
 
-export default CategorySection; 
+export default CategorySection;
