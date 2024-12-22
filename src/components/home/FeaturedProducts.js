@@ -1,5 +1,7 @@
 import { Container, Grid, Card, CardContent, CardMedia, Typography, Button, Rating, Box } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useDispatch } from 'react-redux';
+import { addToCart, resetLastAddedId } from '../../store/cartSlice';
 
 // Helper function to format price in Indian format
 const formatIndianPrice = (price) => {
@@ -38,6 +40,16 @@ const featuredProducts = [
 ];
 
 const FeaturedProducts = () => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    // Reset lastAddedId after animation
+    setTimeout(() => {
+      dispatch(resetLastAddedId());
+    }, 1000);
+  };
+
   return (
     <Container sx={{ my: 6 }}>
       <Typography 
@@ -132,6 +144,7 @@ const FeaturedProducts = () => {
                   variant="contained" 
                   fullWidth
                   startIcon={<ShoppingCartIcon />}
+                  onClick={() => handleAddToCart(product)}
                   sx={{
                     mt: 'auto',
                     textTransform: 'none',
