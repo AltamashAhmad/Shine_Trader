@@ -8,13 +8,14 @@
     "@mui/icons-material": "^6.2.1",
     "@mui/material": "^6.2.1",
     "@reduxjs/toolkit": "^2.5.0",
+    "ajv": "^6.12.6",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "redux": "^5.0.1"
   },
   "scripts": {
